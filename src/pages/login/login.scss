@@ -1,0 +1,121 @@
+.login {
+  &_container {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100%;
+    background-color: $color-white;
+  }
+
+  &_image {
+    flex: 1 1 auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 6.7rem;
+
+    & .logo_box {
+      margin-left: 9.7rem;
+    }
+
+    &_pablo_box {
+      margin-top: 13.9rem;
+    }
+
+    &_pablo {
+      min-width: 40%;
+      height: auto;
+    }
+  }
+
+  &_form {
+    flex: 1 1 auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $color-white;
+    padding-left: 10rem;
+    padding-right: 2rem;
+
+    & .title {
+      font-family: "Avenir Next";
+      font-weight: 700;
+      font-size: 4rem;
+      line-height: 5.5rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 1rem;
+
+      color: $color-blue-dark;
+    }
+
+    & p {
+      font-family: "Avenir Next";
+      font-weight: 400;
+      font-size: 2rem;
+      line-height: 2.7rem;
+      color: $color-blue-light;
+    }
+
+    & form {
+      display: flex;
+      flex-direction: column;
+      margin-top: 6rem;
+
+      & > div {
+        position: relative;
+        margin-bottom: 2.4rem;
+        max-width: 44.7rem;
+      }
+    }
+
+    &_input {
+      height: 5rem;
+      width: 100%;
+      padding: 0 1.6rem;
+      background: $color-white;
+      border: $input-box-border;
+      border-radius: 0.5rem;
+    }
+
+    &_input--password {
+      padding-right: 7rem;
+    }
+
+    & .forgot_password {
+      font-family: "Avenir Next";
+      font-weight: 600;
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+      color: $color-btn;
+      cursor: pointer;
+    }
+
+    & .show_input {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 1.95rem;
+
+      font-family: "Avenir Next";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: $color-btn;
+      cursor: pointer;
+    }
+
+    & .submit_btn {
+      max-width: 44.7rem;
+      height: 4.8rem;
+    }
+  }
+}
