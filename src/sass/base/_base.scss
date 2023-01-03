@@ -1,0 +1,26 @@
+////////////////////////////
+///// Reset
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  max-width: 144rem;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: $color-blue-dark;
+}
+
+ul {
+  list-style: none;
+}

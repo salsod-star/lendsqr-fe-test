@@ -16,3 +16,10 @@
   grid-column: 1 / 2;
   background-color: $color-white;
 }
+
+@media screen and (max-width: 1366px) {
+  .users {
+    padding: 4rem 4rem 0 4rem;
+    width: 100%;
+  }
+}

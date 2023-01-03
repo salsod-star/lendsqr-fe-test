@@ -1,6 +1,6 @@
 import React from "react";
 
-import Button from "../CustomButton";
+import Button from "../CustomElements/CustomButton";
 
 function UserDetailHeader() {
   const buttonStyleRed = {

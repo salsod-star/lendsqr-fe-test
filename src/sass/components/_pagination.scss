@@ -1,0 +1,66 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5rem;
+  margin-top: 2rem;
+
+  &_quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1rem;
+
+    select {
+      appearance: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 500;
+      line-height: 1.6rem;
+      color: $color-blue-dark;
+      padding: 0.7rem 1.2rem;
+      border-radius: 0.4rem;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      width: 8rem;
+      height: 3rem;
+      background-color: $pagination_button_background;
+    }
+  }
+
+  &_page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.4rem;
+      height: 2.4rem;
+      background-color: $pagination_button_background;
+      border-radius: 0.4rem;
+      cursor: pointer;
+    }
+
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+
+      gap: 2rem;
+
+      .active_page {
+        font-weight: 500;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.sidebar {
+  font-size: 1.6rem;
+  box-shadow: $sidebar-box-shadow;
+  background-color: $color-white;
+  overflow: hidden;
+
+  &__organization-category {
+    border: none;
+    outline: none;
+    background: none;
+    width: 83%;
+    font: inherit;
+    cursor: pointer;
+    color: $color-blue-dark;
+  }
+
+  &__nav-box {
+    margin-top: 4.1rem;
+
+    h3 {
+      font-family: "Work Sans";
+      font-weight: 500;
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      margin-left: 3rem;
+      color: $color-blue-light;
+    }
+  }
+  &__nav-link {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem 3rem;
+    margin: 2.1rem 0;
+    color: $color-blue-dark;
+    font: inherit;
+    font-family: "Work Sans";
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+
+    &:hover,
+    &:active {
+      background-color: rgba($color-btn, 0.06);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 0.3rem;
+        height: 100%;
+        background-color: $color-btn;
+      }
+    }
+
+    img {
+      margin-right: 1rem;
+    }
+  }
+}

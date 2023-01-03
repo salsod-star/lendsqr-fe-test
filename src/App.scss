@@ -1,1 +1,20 @@
-@import url("./Styles/_base.scss");
+@import "./sass/abstract/mixins";
+@import "./sass/abstract/variables";
+
+@import "./sass/base/animations";
+@import "./sass/base/base";
+@import "./sass/base/typography";
+@import "./sass/base/utilities";
+
+@import "./sass/components/buttons";
+@import "./sass/components/input";
+@import "./sass/components/filter_modal";
+@import "./sass/components/header";
+@import "./sass/components/pagination";
+@import "./sass/components/sidebar";
+@import "./sass/components/user_info_modal";
+
+@import "./sass/layout/layout";
+
+@import "./sass/pages/dashboard";
+@import "./sass/pages/login";

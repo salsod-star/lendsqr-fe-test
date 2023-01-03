@@ -1,0 +1,30 @@
+.user_info_popup {
+  width: 18rem;
+  height: 13rem;
+  background-color: $color-white;
+  border: 1px solid rgba(84, 95, 125, 0.04);
+  box-shadow: $box-shadow;
+  border-radius: 0.4rem;
+  padding-top: 2rem;
+
+  & div {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-blue-light;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    padding-left: 2.144rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($dashboard_background, 1%);
+    }
+
+    img {
+      font-size: 1.4rem;
+    }
+  }
+}

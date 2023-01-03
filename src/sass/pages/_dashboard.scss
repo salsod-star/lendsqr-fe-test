@@ -1,3 +1,116 @@
+.users {
+  padding-top: 6rem;
+  max-width: 103.7rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  overflow: hidden;
+
+  &__overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2.6rem;
+    padding: 4rem 0;
+
+    &-card {
+      padding: 2rem 3rem 3rem;
+      background-color: $color-white;
+      border: $border;
+      box-shadow: $box-shadow;
+      border-radius: 0.4rem;
+
+      & p:first-of-type {
+        margin: 1.4rem 0 1.2rem;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        text-transform: uppercase;
+        color: $color-blue-light;
+      }
+
+      & p:last-of-type {
+        font-weight: 600;
+        font-size: 2.4rem;
+        line-height: 2.8rem;
+        text-transform: uppercase;
+        color: $color-blue-dark;
+      }
+    }
+  }
+
+  &_wrapper {
+    width: 100%;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    border-radius: 4px;
+    box-shadow: $box-shadow;
+  }
+
+  &__table {
+    padding: 3rem;
+    background-color: $color-white;
+    border: 1px solid rgba(218, 222, 230, 0.06);
+    min-width: 122.7rem;
+    // max-width: 103.7rem;
+
+    &-header {
+      width: 100%;
+
+      th {
+        font-family: "Work Sans";
+        font-weight: 600;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        text-transform: uppercase;
+        vertical-align: middle;
+        text-align: left;
+        padding-bottom: 1rem;
+
+        img {
+          margin-left: 1rem;
+          display: inline-block;
+          vertical-align: bottom;
+        }
+      }
+    }
+
+    &--main {
+      width: 100%;
+
+      td {
+        text-align: left;
+        vertical-align: middle;
+        padding: 2.3rem 0;
+
+        border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+      }
+    }
+
+    &-row:last-of-type td {
+      border-bottom: none;
+    }
+
+    &-row {
+      position: relative;
+
+      .moreInfo_modal_container {
+        padding: 0 1rem;
+        text-align: center;
+        cursor: pointer;
+      }
+      .user_info_popup {
+        position: absolute;
+        top: 110%;
+        left: 83%;
+        z-index: 1000;
+      }
+    }
+  }
+}
+
+//////////////////////////////////////
+/// User Detail Styles
+
 .user_detail {
   .nav {
     font-size: 1.6rem;

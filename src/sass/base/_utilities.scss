@@ -1,0 +1,45 @@
+.active_status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7rem;
+  height: 3rem;
+  background: rgba($color-green, 0.06);
+  color: $color-green;
+  border-radius: 100px;
+}
+
+.inactive_status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8rem;
+  height: 3rem;
+  background: rgba($color-blue-light, 0.06);
+  color: $color-blue-dark;
+  border-radius: 100px;
+}
+
+.pending_status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 9rem;
+  height: 3rem;
+  background: rgba($color-yellow, 0.1);
+  color: $color-yellow;
+  border-radius: 100px;
+}
+
+.blacklist_status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 10rem;
+  height: 3rem;
+  background: rgba($color-red, 0.1);
+  color: $color-red;
+  border-radius: 100px;
+}

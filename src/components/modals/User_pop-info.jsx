@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import eyeViewIcon from "../asset/eye-view.svg";
-import blacklistIcon from "../asset/blacklist-user-icon.svg";
-import activateUserIcon from "../asset/activate-user-icon.svg";
-import AuthContext from "../Auth/AuthProvider";
+import eyeViewIcon from "../../asset/eye-view.svg";
+import blacklistIcon from "../../asset/blacklist-user-icon.svg";
+import activateUserIcon from "../../asset/activate-user-icon.svg";
+import AuthContext from "../../Auth/AuthProvider";
 
 function getUserDetail(users, id) {
   return users.find((user) => user.id === id);

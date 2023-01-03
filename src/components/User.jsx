@@ -1,6 +1,6 @@
 import React from "react";
 import dots from "../asset/dots.svg";
-import UserPopupInfo from "./User_pop-info";
+import UserPopupInfo from "./modals/User_pop-info";
 import { parseDate } from "./DateParser";
 
 function User({

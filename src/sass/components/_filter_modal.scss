@@ -1,0 +1,76 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 27rem;
+  height: 600px;
+
+  background: #ffffff;
+  border: 1px solid rgba(84, 95, 125, 0.14);
+  box-shadow: $box-shadow;
+  border-radius: 4px;
+
+  &_form {
+    .field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+
+      select {
+        appearance: none;
+        height: 4rem;
+        width: 23rem;
+        outline: none;
+        background: $color-white;
+        color: rgba($color-blue-light, 0.2);
+        border: 1px solid rgba($color-blue-dark, 0.2);
+        border-radius: 8px;
+        padding: 1.2rem 2rem;
+      }
+
+      label {
+        margin-bottom: 0.6rem;
+      }
+
+      input {
+        height: 4rem;
+        width: 23rem;
+        padding: 1.2rem 2rem;
+        font: inherit;
+
+        color: rgba($color-blue-light, 0.7);
+
+        appearance: none;
+        outline: none;
+        border: none;
+        background: $color-white;
+        // color: $color-blue-light;
+        border: 1px solid rgba($color-blue-dark, 0.2);
+        border-radius: 8px;
+      }
+
+      &_action_btn {
+        display: flex;
+
+        justify-content: center;
+        gap: 1.4rem;
+
+        button:not(:last-of-type) {
+          background-color: $color-white;
+          border: 1px solid $color-blue-light;
+          color: $color-blue-light;
+        }
+
+        button {
+          width: 98px;
+          height: 40px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

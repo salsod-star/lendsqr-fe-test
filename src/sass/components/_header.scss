@@ -1,0 +1,100 @@
+////////////////////////////////////////
+//// Header
+
+.header {
+  width: 100%;
+  height: 10rem;
+  background-color: $color-white;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: $box-shadow;
+
+  &__logo {
+    margin-right: 11.68vw;
+    margin-left: 3rem;
+  }
+
+  &__search-box {
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    margin-right: auto;
+    width: 40rem;
+    height: 4rem;
+    border-radius: 0.8rem;
+
+    // & > div {
+    //   width: 100%;
+    // }
+  }
+
+  &__search-input {
+    border: $input-box-border;
+    border-right: none;
+    flex: 1 1 auto;
+    height: 4rem;
+    width: 100%;
+    padding: 1.2rem 2rem;
+    border-top-left-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
+    // border: none;
+    outline: none;
+
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: $color-blue-light;
+
+    opacity: 0.7;
+  }
+
+  &__search-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-btn;
+    color: $color-white;
+    height: 100%;
+    padding: 1.3rem 2.1rem;
+    border-top-right-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    margin-left: 5.016rem;
+    margin-right: 6.6rem;
+
+    &-name {
+      display: flex;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      color: $color-blue-dark;
+      cursor: pointer;
+
+      p {
+        margin-right: 1.033rem;
+      }
+    }
+
+    &-icon {
+      margin-right: 3.3rem;
+      cursor: pointer;
+    }
+
+    &-image {
+      margin-right: 1rem;
+      width: 4.8rem;
+      height: 4.8rem;
+      border-radius: 100%;
+    }
+  }
+}

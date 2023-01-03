@@ -1,7 +1,7 @@
 import React from "react";
 
-import FormInput from "./FormInput";
-import Button from "./CustomButton";
+import FormInput from "./CustomElements/FormInput";
+import Button from "./CustomElements/CustomButton";
 
 import logo from "../asset/logo.svg";
 import searchIcon from "../asset/search-icon.svg";

@@ -1,5 +1,5 @@
-import Button from "./CustomButton";
-import FormInput from "./FormInput";
+import Button from "../CustomElements/CustomButton";
+import FormInput from "../CustomElements/FormInput";
 import arrDown from "../asset/drop-down.svg";
 import calenderIcon from "../asset/calendar.svg";
 
