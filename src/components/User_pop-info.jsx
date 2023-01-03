@@ -1,12 +1,26 @@
-import React from "react";
+import { useContext } from "react";
 import eyeViewIcon from "../asset/eye-view.svg";
 import blacklistIcon from "../asset/blacklist-user-icon.svg";
 import activateUserIcon from "../asset/activate-user-icon.svg";
+import AuthContext from "../Auth/AuthProvider";
 
-function UserPopupInfo({ ...otherProps }) {
+function getUserDetail(users, id) {
+  return users.find((user) => user.id === id);
+}
+
+function UserPopupInfo({ setSwap, user, ...otherProps }) {
+  const { auth, setAuth } = useContext(AuthContext);
+
+  const handleClick = (id) => {
+    setSwap(false);
+
+    const userInfo = getUserDetail(auth.users, id);
+    setAuth((prev) => ({ ...prev, userInfo }));
+  };
+
   return (
     <div className="user_info_popup" {...otherProps}>
-      <div>
+      <div onClick={() => handleClick(user.id)}>
         <img src={eyeViewIcon} alt="view details" /> <p>View Details</p>
       </div>
       <div>

@@ -6,9 +6,13 @@ import Button from "./CustomButton";
 import logo from "../asset/logo.svg";
 import searchIcon from "../asset/search-icon.svg";
 import bellIcon from "../asset/bell-icon.svg";
-import profilePicture from "../asset/active-users.svg";
+import dropDown from "../asset/profile-drop-down.svg";
 
-function Header() {
+function Header({ user }) {
+  const {
+    profile: { firstName, avatar },
+  } = user;
+
   return (
     <header className="header">
       <a href="/" className="header__logo">
@@ -32,12 +36,11 @@ function Header() {
         <div className="header__user-icon">
           <img src={bellIcon} alt="notification icon" />
         </div>
-        <img
-          src={profilePicture}
-          alt="user profile"
-          className="header__user-image"
-        />
-        <p className="header__user-name">Adedeji</p>
+        <img src={avatar} alt="user profile" className="header__user-image" />
+        <div className="header__user-name">
+          <p>{firstName}</p>
+          <img src={dropDown} alt="drop down" />
+        </div>
       </div>
     </header>
   );

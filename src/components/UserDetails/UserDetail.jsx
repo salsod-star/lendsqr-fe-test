@@ -1,21 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import prevPage from "../../asset/prevPageArrow.svg";
 import UserDetailOverview from "./UserDetailOverview";
 import UserDetailHeader from "./UserDetailHeader";
 import UserInfo from "./UserInfo";
+import AuthContext from "../../Auth/AuthProvider";
 
-function UserDetail() {
+function UserDetail({ setSwap }) {
+  const { auth } = useContext(AuthContext);
+  const user = auth.userInfo;
+
   return (
-    <div className="user_detail">
-      <span className="nav">
+    <div className="users user_detail">
+      <span className="nav" onClick={() => setSwap(true)}>
         <img src={prevPage} alt="back to previous page" /> Back to Users
       </span>
       <UserDetailHeader />
       <div className="scroll_overflow">
-        <UserDetailOverview />
+        <UserDetailOverview user={user} />
       </div>
-      <UserInfo />
+      <UserInfo user={user} />
     </div>
   );
 }

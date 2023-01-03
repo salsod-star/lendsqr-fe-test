@@ -79,6 +79,12 @@
           height: 10rem;
           background-color: rgba($color-blue-dark, 0.16);
           border-radius: 100%;
+
+          .userImage {
+            border-radius: 100%;
+            width: 10rem;
+            height: 10rem;
+          }
         }
 
         .avatar_name {

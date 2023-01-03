@@ -1,22 +1,26 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import User from "./User";
-import data from "./data";
-function UsersTableMain() {
-  const d = data();
-  const arr = d.map((entry) => false);
-  const [shouldOPen, setShouldOPen] = useState(arr);
+
+function UsersTableMain({ users, setSwap }) {
+  const usersArrBool = useCallback(() => {
+    return users.map((entry) => false);
+  }, [users]);
+
+  const [shouldOPen, setShouldOPen] = useState(usersArrBool);
 
   return (
     <tbody className="users__table--main">
-      {d.map((user, index) => {
+      {users?.map((user, index) => {
         return (
           <User
-            key={index}
-            {...user}
+            key={user.id}
+            userID={user.id}
+            user={user}
             isModalOpen={shouldOPen[index]}
             userIndex={index}
             setShouldOPen={setShouldOPen}
             shouldOPen={shouldOPen}
+            setSwap={setSwap} // from dashboard component
           />
         );
       })}

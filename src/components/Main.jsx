@@ -1,16 +1,12 @@
-import React from "react";
-// import UserOverview from "./userOverview";
-// import UsersTable from "./UserTable";
+import UserOverview from "./userOverview";
+import UsersTable from "./UserTable";
 
-import UserDetail from "./UserDetails/UserDetail";
-
-function Main() {
+function Main({ setSwap }) {
   return (
     <div className="users">
-      {/* <h2>Users</h2>
+      <h2>Users</h2>
       <UserOverview />
-      <UsersTable /> */}
-      <UserDetail />
+      <UsersTable setSwap={setSwap} />
     </div>
   );
 }

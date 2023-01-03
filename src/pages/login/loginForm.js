@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React, { useRef, useState, useContext, useEffect } from "react";
+import { useNavigate, Form } from "react-router-dom";
+
 import FormInput from "../../components/FormInput";
 import Button from "../../components/CustomButton";
 
 import logo from "../../asset/logo.svg";
 import pabloLoginImage from "../../asset/pablo-sign-in.svg";
+import axios from "../../api/axios";
+import AuthContext, { validateUser } from "../../Auth/AuthProvider";
 
 function LoginForm() {
+  const navigate = useNavigate();
+  const { auth, setAuth } = useContext(AuthContext);
+
+  const userRef = useRef(null);
   const [formEntries, setFormEntries] = useState({
     email: "",
     password: "",
@@ -17,6 +25,35 @@ function LoginForm() {
       [e.target["name"]]: e.target.value,
     }));
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const currUser = validateUser(auth.users, formEntries.email);
+
+    if (currUser) {
+      setAuth((prev) => ({ ...prev, currentUser: currUser }));
+      navigate("/dashboard");
+    } else {
+      console.log("Incorrect password/email");
+    }
+  };
+
+  useEffect(() => {
+    userRef.current.focus();
+    async function getAllUsers() {
+      try {
+        const response = await axios.get("/users");
+        setAuth({
+          users: response.data,
+        });
+      } catch (error) {
+        return;
+      }
+    }
+
+    getAllUsers();
+  }, [setAuth]);
 
   return (
     <div className="login_container">
@@ -36,27 +73,33 @@ function LoginForm() {
       <div className="login_form">
         <h2 className="title">Welcome!</h2>
         <p>Enter details to login.</p>
-        <form>
+        <Form onSubmit={handleSubmit}>
           <FormInput
+            ref={userRef}
             type="email"
             name="email"
+            autoComplete="off"
             handleChange={handleChange}
+            value={formEntries.email}
             placeholder="Email"
+            required
             className="login_form_input"
           />
           <FormInput
             type="password"
             name="password"
             handleChange={handleChange}
+            value={formEntries.password}
             placeholder="Password"
             isPassword={true}
+            required
             className="login_form_input login_form_input--password"
           />
           <span className="forgot_password">Forgot PASSWORD?</span>
           <Button type="submit" className="submit_btn btn">
             {"Log in".toUpperCase()}
           </Button>
-        </form>
+        </Form>
       </div>
     </div>
   );

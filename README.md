@@ -1,6 +1,6 @@
-# Lendsqr Assessment -
+# Lendsqr Assessment - Dashboard
 
-This is a solution to the [Advice generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+Lendsqr allows you to automate your entire credit lifecycle with Lendsqr’s comprehensive end-to-end digital lending stack. Manage and optimize your lending process using extensively configurable loan decision workflow and easily adapt your offerings for your best customers.
 
 ## Table of contents
 
@@ -8,6 +8,7 @@ This is a solution to the [Advice generator app challenge on Frontend Mentor](ht
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
+  - [Login Details](#login-details)
 - [My process](#my-process)
   - [Built with](#built-with)
 - [Author](#author)
@@ -27,11 +28,22 @@ Users should be able to:
 
 This is a preview of the project.
 
-![](./screenshot.png)
+![](./screenshot1.png)
+
+![](./screenshot2.png)
 
 ### Links
 
 - Live Site URL: [lendsqr-salsod](https://demo.com)
+
+### Login Details
+
+Kindly follow the instructions below when asked for the login email/password.
+
+email: `['Mckenzie87@gmail.com','Mckenna_Muller31@hotmail.com', 'Veronica_Shanahan93@gmail.com']`
+password: Feel free to type anything you want
+
+**Note: The email address field must include one of the given email addresses above**
 
 ## My process
 

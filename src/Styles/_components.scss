@@ -72,12 +72,29 @@
     margin-left: 5.016rem;
     margin-right: 6.6rem;
 
+    &-name {
+      display: flex;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      color: $color-blue-dark;
+      cursor: pointer;
+
+      p {
+        margin-right: 1.033rem;
+      }
+    }
+
     &-icon {
       margin-right: 3.3rem;
+      cursor: pointer;
     }
 
     &-image {
       margin-right: 1rem;
+      width: 4.8rem;
+      height: 4.8rem;
+      border-radius: 100%;
     }
   }
 }
@@ -204,8 +221,8 @@
     padding: 3rem;
     background-color: $color-white;
     border: 1px solid rgba(218, 222, 230, 0.06);
-    min-width: 103.7rem;
-    max-width: 103.7rem;
+    min-width: 122.7rem;
+    // max-width: 103.7rem;
 
     &-header {
       width: 100%;
