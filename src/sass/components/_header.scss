@@ -6,6 +6,7 @@
   height: 10rem;
   background-color: $color-white;
 
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,16 +20,26 @@
 
   &__search-box {
     display: flex;
-    // justify-content: space-between;
     align-items: center;
     margin-right: auto;
     width: 40rem;
     height: 4rem;
     border-radius: 0.8rem;
 
-    // & > div {
-    //   width: 100%;
-    // }
+    @media screen and (max-width: 1114px) {
+      width: 30rem;
+    }
+
+    @media screen and (max-width: 660px) {
+      &.desktop {
+        display: none;
+      }
+    }
+    @media screen and (min-width: 660px) {
+      &.mobile {
+        display: none;
+      }
+    }
   }
 
   &__search-input {
@@ -72,6 +83,50 @@
     margin-left: 5.016rem;
     margin-right: 6.6rem;
 
+    .doc {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      text-decoration: underline $color-blue-dark;
+      margin-right: 4rem;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    & > div {
+      display: flex;
+      align-items: center;
+      margin: 0;
+    }
+
+    @media screen and (max-width: 1110px) {
+      margin: 0 3rem;
+    }
+
+    @media screen and (max-width: 980px) {
+      position: absolute;
+      right: 3%;
+      top: 105%;
+      padding: 1rem 2rem;
+      margin: 0;
+      background-color: $color-white;
+      box-shadow: $box-shadow;
+      border-radius: 4px;
+      z-index: 1000;
+    }
+
+    @media screen and (max-width: 660px) {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    @media screen and (max-width: 380px) {
+      margin-left: 2rem;
+    }
+
     &-name {
       display: flex;
       font-weight: 500;
@@ -95,6 +150,19 @@
       width: 4.8rem;
       height: 4.8rem;
       border-radius: 100%;
+    }
+  }
+
+  .hamburger_menu {
+    display: none;
+    font-size: 3rem;
+    font-weight: 600;
+    color: $color-blue-dark;
+    cursor: pointer;
+
+    @media screen and (max-width: 980px) {
+      display: block;
+      margin-right: 2rem;
     }
   }
 }

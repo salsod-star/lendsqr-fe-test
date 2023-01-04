@@ -2,13 +2,12 @@
   font-size: 1.6rem;
   box-shadow: $sidebar-box-shadow;
   background-color: $color-white;
-  overflow: hidden;
 
   &__organization-category {
     border: none;
     outline: none;
     background: none;
-    width: 83%;
+    width: 85%;
     font: inherit;
     cursor: pointer;
     color: $color-blue-dark;

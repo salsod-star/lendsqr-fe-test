@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import dots from "../asset/dots.svg";
 import UserPopupInfo from "./modals/User_pop-info";
 import { parseDate } from "./DateParser";
@@ -12,6 +12,8 @@ function User({
   setSwap, // from dashboard component
 }) {
   const lastTwoIndex = [shouldOPen.length - 2, shouldOPen.length - 1];
+  let [status, setStatus] = useState("");
+
   function handleUserDetailPopUp(i) {
     setShouldOPen((prev) => {
       const newState = prev.map((entry, index) =>
@@ -20,6 +22,7 @@ function User({
       return newState;
     });
   }
+
   let {
     orgName,
     userName,
@@ -31,7 +34,13 @@ function User({
   let date = parseDate(createdAt);
 
   let statusStyle = "";
-  let status = "active";
+
+  useEffect(() => {
+    let statusIndex = Math.floor(Math.random() * 3) + 1;
+    let statusArr = ["Active", "Pending", "Inactive", "Blacklisted"];
+
+    setStatus(statusArr[statusIndex]);
+  }, [status]);
 
   if (status === "Inactive") {
     statusStyle = "inactive_status";

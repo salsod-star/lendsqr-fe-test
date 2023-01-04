@@ -27,16 +27,11 @@ function Sidebar() {
     <aside className="sidebar">
       <nav className="sidebar__nav">
         <ul className="sidebar__nav-box">
-          <li>
-            <a href="/" className="sidebar__nav-link">
-              <img src={briefcase1} alt="icons" />{" "}
-              <select
-                name="category"
-                className="sidebar__organization-category"
-              >
-                <option value="Organization">Switch Organization</option>
-              </select>
-            </a>
+          <li className="sidebar__nav-link">
+            <img src={briefcase1} alt="icons" />{" "}
+            <select name="category" className="sidebar__organization-category">
+              <option value="Organization">Switch Organization</option>
+            </select>
           </li>
           <li>
             <a href="/" className="sidebar__nav-link">

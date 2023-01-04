@@ -1,16 +1,30 @@
+.users_wrapper--overflow::-webkit-scrollbar {
+  display: none;
+}
+
+.users_wrapper--overflow {
+  width: 100vw;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
 .users {
   padding-top: 6rem;
   max-width: 103.7rem;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
-  overflow: hidden;
+
+  @media screen and (max-width: 730px) {
+    padding: 6rem 4rem;
+    width: 1300px;
+  }
 
   &__overview {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 2.6rem;
     padding: 4rem 0;
+    // max-width: 103.7rem;
 
     &-card {
       padding: 2rem 3rem 3rem;
@@ -39,7 +53,7 @@
   }
 
   &_wrapper {
-    width: 100%;
+    max-width: 103.7rem;
     overflow-x: scroll;
     scrollbar-width: none;
     border-radius: 4px;
@@ -50,8 +64,7 @@
     padding: 3rem;
     background-color: $color-white;
     border: 1px solid rgba(218, 222, 230, 0.06);
-    min-width: 122.7rem;
-    // max-width: 103.7rem;
+    width: 122.7rem;
 
     &-header {
       width: 100%;

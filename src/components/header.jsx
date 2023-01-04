@@ -1,4 +1,5 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
 import FormInput from "./CustomElements/FormInput";
 import Button from "./CustomElements/CustomButton";
@@ -9,16 +10,31 @@ import bellIcon from "../asset/bell-icon.svg";
 import dropDown from "../asset/profile-drop-down.svg";
 
 function Header({ user }) {
+  const [show, setShow] = useState({
+    screenWidth: 1000,
+    continue: false,
+  });
   const {
     profile: { firstName, avatar },
   } = user;
+
+  useEffect(() => {
+    function getScreenWidth(e) {
+      setShow((prev) => ({ ...prev, screenWidth: e.target.innerWidth }));
+    }
+    window.addEventListener("resize", getScreenWidth);
+
+    return () => {
+      window.removeEventListener("resize", getScreenWidth);
+    };
+  }, [show.screenWidth]);
 
   return (
     <header className="header">
       <a href="/" className="header__logo">
         <img src={logo} alt="logo" />
       </a>
-      <form className="header__search-box">
+      <form className="header__search-box desktop">
         <FormInput
           type="search"
           name="search"
@@ -29,19 +45,77 @@ function Header({ user }) {
           <img src={searchIcon} alt="search icon" />
         </Button>
       </form>
-      <a href="/" className="doc">
-        Docs
-      </a>
-      <div className="header__user">
-        <div className="header__user-icon">
-          <img src={bellIcon} alt="notification icon" />
+      {show.screenWidth > 980 ? (
+        <div className="header__user">
+          <div>
+            <a href="/" className="doc">
+              Docs
+            </a>
+            <div className="header__user-icon">
+              <img src={bellIcon} alt="notification icon" />
+            </div>
+            <img
+              src={avatar}
+              alt="user profile"
+              className="header__user-image"
+            />
+            <div className="header__user-name">
+              <p>{firstName}</p>
+              <img src={dropDown} alt="drop down" />
+            </div>
+          </div>
+          <form className="header__search-box mobile">
+            <FormInput
+              type="search"
+              name="search"
+              className="header__search-input"
+              placeholder="Search for anything"
+            />
+            <Button type="submit" className="header__search-btn">
+              <img src={searchIcon} alt="search icon" />
+            </Button>
+          </form>
         </div>
-        <img src={avatar} alt="user profile" className="header__user-image" />
-        <div className="header__user-name">
-          <p>{firstName}</p>
-          <img src={dropDown} alt="drop down" />
+      ) : show.screenWidth < 980 && show.continue ? (
+        <div className="header__user">
+          <div>
+            <a href="/" className="doc">
+              Docs
+            </a>
+            <div className="header__user-icon">
+              <img src={bellIcon} alt="notification icon" />
+            </div>
+            <img
+              src={avatar}
+              alt="user profile"
+              className="header__user-image"
+            />
+            <div className="header__user-name">
+              <p>{firstName}</p>
+              <img src={dropDown} alt="drop down" />
+            </div>
+          </div>
+          <form className="header__search-box mobile">
+            <FormInput
+              type="search"
+              name="search"
+              className="header__search-input"
+              placeholder="Search for anything"
+            />
+            <Button type="submit" className="header__search-btn">
+              <img src={searchIcon} alt="search icon" />
+            </Button>
+          </form>
         </div>
-      </div>
+      ) : (
+        ""
+      )}
+      <HiOutlineMenuAlt3
+        className="hamburger_menu"
+        onClick={() =>
+          setShow((prev) => ({ ...prev, continue: !prev.continue }))
+        }
+      />
     </header>
   );
 }

@@ -39,6 +39,9 @@ function LoginForm() {
     if (currUser) {
       setAuth((prev) => ({ ...prev, currentUser: currUser }));
       navigate("/dashboard");
+
+      localStorage.setItem("currentUser", String(auth.users));
+      localStorage.setItem("currentUser", String(currUser));
     } else {
       console.log("Incorrect password/email");
     }

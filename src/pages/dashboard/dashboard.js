@@ -14,11 +14,13 @@ function Dashboard() {
     <div className="container">
       <Header user={auth.currentUser && auth.currentUser} />
       <Sidebar />
-      {swap ? (
-        <Main setSwap={setSwap} />
-      ) : (
-        <UserDetail userInfo={auth.userInfo} setSwap={setSwap} />
-      )}
+      <div className="users_wrapper--overflow">
+        {swap ? (
+          <Main setSwap={setSwap} />
+        ) : (
+          <UserDetail userInfo={auth.userInfo} setSwap={setSwap} />
+        )}
+      </div>
     </div>
   );
 }
