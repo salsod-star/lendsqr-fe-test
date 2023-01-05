@@ -34,7 +34,7 @@ This is a preview of the project.
 
 ### Links
 
-- Live Site URL: [lendsqr-salsod](https://demo.com)
+- Live Site URL: [lendsqr-salsod](https://salaudeen-sodiq-lendsqr-fe-test.netlify.app/)
 
 ### Login Details
 
