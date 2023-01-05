@@ -11,7 +11,7 @@ import dropDown from "../asset/profile-drop-down.svg";
 
 function Header({ user }) {
   const [show, setShow] = useState({
-    screenWidth: 1000,
+    screenWidth: window.innerWidth,
     continue: false,
   });
   const {

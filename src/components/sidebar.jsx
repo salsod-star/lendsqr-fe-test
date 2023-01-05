@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 
 import briefcase1 from "../asset/briefcase 1.svg";
 import briefcase from "../asset/briefcase.svg";
@@ -22,9 +22,24 @@ import preferenceIcon from "../asset/preference.svg";
 import fees from "../asset/fees and pricing.svg";
 import audit from "../asset/audit.svg";
 
+import hideIcon from "../asset/left-arrow.svg";
+import showIcon from "../asset/right-arrow.svg";
+
 function Sidebar() {
+  const [hide, setHide] = useState(true);
+
+  const handleHide = () => {
+    setHide((prev) => !prev);
+  };
+
   return (
-    <aside className="sidebar">
+    <aside
+      className="sidebar"
+      style={!hide ? {} : { transform: "translateX(0%)" }}
+    >
+      <div className="hideBox" onClick={handleHide}>
+        <img src={hide ? hideIcon : showIcon} alt="hide button" />
+      </div>
       <nav className="sidebar__nav">
         <ul className="sidebar__nav-box">
           <li className="sidebar__nav-link">

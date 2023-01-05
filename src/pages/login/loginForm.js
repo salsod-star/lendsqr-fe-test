@@ -36,12 +36,12 @@ function LoginForm() {
 
     const currUser = validateUser(auth.users, formEntries.email);
 
+    if (localStorage.getItem("currUser") == null) {
+      localStorage.setItem("currUser", JSON.stringify(currUser));
+    }
     if (currUser) {
       setAuth((prev) => ({ ...prev, currentUser: currUser }));
       navigate("/dashboard");
-
-      localStorage.setItem("currentUser", String(auth.users));
-      localStorage.setItem("currentUser", String(currUser));
     } else {
       console.log("Incorrect password/email");
     }
@@ -49,12 +49,14 @@ function LoginForm() {
 
   useEffect(() => {
     userRef.current.focus();
+
     async function getAllUsers() {
       try {
         const response = await axios.get("/users");
         setAuth({
           users: response.data,
         });
+        localStorage.setItem("users", JSON.stringify(response.data));
       } catch (error) {
         return;
       }

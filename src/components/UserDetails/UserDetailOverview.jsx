@@ -43,7 +43,7 @@ const UserDetailOverviewTop = ({ user }) => {
 const UserDetailOverviewBottom = () => {
   return (
     <div className="user_detail_overview_bottom">
-      <span>General&nbsp;Details</span>
+      <span className="active">General&nbsp;Details</span>
       <span>Documents</span>
       <span>Bank&nbsp;Details</span>
       <span>Loans</span>

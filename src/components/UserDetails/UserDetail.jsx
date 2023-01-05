@@ -1,14 +1,10 @@
-import React, { useContext } from "react";
-
 import prevPage from "../../asset/prevPageArrow.svg";
 import UserDetailOverview from "./UserDetailOverview";
 import UserDetailHeader from "./UserDetailHeader";
 import UserInfo from "./UserInfo";
-import AuthContext from "../../Auth/AuthProvider";
 
 function UserDetail({ setSwap }) {
-  const { auth } = useContext(AuthContext);
-  const user = auth.userInfo;
+  const selectedUserInfo = JSON.parse(localStorage.getItem("userInfo"));
 
   return (
     <div className="users user_detail">
@@ -17,9 +13,9 @@ function UserDetail({ setSwap }) {
       </span>
       <UserDetailHeader />
       <div className="scroll_overflow">
-        <UserDetailOverview user={user} />
+        <UserDetailOverview user={selectedUserInfo} />
       </div>
-      <UserInfo user={user} />
+      <UserInfo user={selectedUserInfo} />
     </div>
   );
 }

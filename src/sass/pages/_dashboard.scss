@@ -3,7 +3,7 @@
 }
 
 .users_wrapper--overflow {
-  width: 100vw;
+  width: calc(100vw - minmax(24rem, 28.3rem));
   overflow-x: scroll;
   scrollbar-width: none;
 }
@@ -14,7 +14,7 @@
   margin-left: auto;
   margin-right: auto;
 
-  @media screen and (max-width: 730px) {
+  @media screen and (max-width: 930px) {
     padding: 6rem 4rem;
     width: 1300px;
   }
@@ -295,8 +295,10 @@
         padding: 1rem 2rem;
         cursor: pointer;
 
-        // border-bottom: 2px solid $color-btn;
-        // color: $color-btn;
+        &.active {
+          border-bottom: 2px solid $color-btn;
+          color: $color-btn;
+        }
       }
     }
   }
